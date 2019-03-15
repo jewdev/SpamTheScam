@@ -4,7 +4,7 @@ import random
 import string
 import json
 
-chars = string.ascii_letters + string.digits + 'abcdefghijklmnopqrstuvwxyz'
+chars = string.ascii_letters + string.digits + 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()'
 random.seed = (os.urandom(1024))
 
 url = 'https://www.bluemalgeran.xyz'
@@ -17,7 +17,7 @@ for name in names:
     username = name.lower() + name_extra + '@gmail.com'
     password = ''.join(random.choice(chars) for i in range(8))
 
-    requests.post(url, allow_redirects = True, data = {
+    requests.post(url, allow_redirects = False, data = {
         'LoginForm[username]': username,
         'LoginForm[password]': password
     })
