@@ -7,7 +7,11 @@ import json
 chars = string.ascii_letters + string.digits + 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()'
 random.seed = (os.urandom(1024))
 
-url = 'https://www.bluemalgeran.xyz'
+url = input('Enter URL: ')
+postUsername = input('Enter username form data: ')
+postPassword = input('Enter password form data: ')
+
+os.system('cls')
 
 names = json.loads(open('names.json').read())
 
@@ -18,7 +22,7 @@ for name in names:
     password = ''.join(random.choice(chars) for i in range(8))
 
     requests.post(url, allow_redirects = False, data = {
-        'LoginForm[username]': username,
-        'LoginForm[password]': password
+        postUsername: username,
+        postPassword: password
     })
-    print("sending username %s and password %s" % (username, password))
+    print('sending username %s and password %s' % (username, password))
