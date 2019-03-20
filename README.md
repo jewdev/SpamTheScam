@@ -1,4 +1,4 @@
-# ScamEngineeringSpammer
+# SpamTheScam
 Spam phishing websites with random emails and passwords!
 
 ## Instructions:
